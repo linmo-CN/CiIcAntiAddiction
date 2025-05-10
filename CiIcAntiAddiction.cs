@@ -183,8 +183,6 @@ namespace CiIcAntiAddiction
         {
             while (true)
             {
-                yield return Timing.WaitForSeconds(1);
-
                 if (!player.IsAlive ||
                     player.CurrentItem?.Type != ItemType.KeycardChaosInsurgency ||
                     player.Zone != ZoneType.Surface)
@@ -207,6 +205,7 @@ namespace CiIcAntiAddiction
                         Config.MaxHoldTime - timeHolding),
                         1);
                 }
+                yield return Timing.WaitForSeconds(1);
             }
         }
 
